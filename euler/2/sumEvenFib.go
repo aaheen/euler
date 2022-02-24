@@ -1,7 +1,6 @@
 package main
 
 // Returns the sum of all even fibonacci numbers below a certain value
-// Absolute Maximum of 18,446,744,073,709,551,615
 func SumEvenFib(limit int) int {
 	var sum, n int = 0, 16
 	// Is fib(n) enough? Check and gen. more if necessary
@@ -24,7 +23,7 @@ func fib(n int) int {
 }
 
 // Returns an array of the first n fibonacci numbers.
-// Generated iteratively, NOT recursively.
+// Generated iteratively, NOT recursively
 func fibList(n int) []int {
 	var fibs = make([]int, n)
 	for i := 0; i < n; i++ {
@@ -40,7 +39,7 @@ func fibList(n int) []int {
 	return fibs
 }
 
-// Returns the nth fibonacci number, generated recursively
+// Returns the nth fibonacci number, generated recursively.
 // DANGEROUSLY slow for numbers larger than 30
 func fibR(n int) int {
 	switch {
