@@ -19,7 +19,10 @@ func primeFactors(n uint64) []uint64 {
 			}
 		}
 	}
-	return append(facs, n)
+	if isPrime(n) {
+		facs = append(facs, n)
+	}
+	return facs
 }
 
 // Returns true if n is prime, false otherwise
