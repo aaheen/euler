@@ -5,9 +5,10 @@ I have tried to generalize these solutions somewhat, so they can be repurposed l
 
 ## Structure:
 
-This is all under the Go module `m9ple/euler`. `main` accesses answers through the [`ans`](ans) package, through the `Sol(p int)` and `Ask(p int)` functions, where `p` is the problem number. Each problem is contained in its own sub-package of [`ans`](ans), named `p<number>`.
-
-***Example:*** The full name for the package that contains the solution for Problem 3 is [`m9ple/euler/ans/p3`](ans/p3). To get the exact answer for Problem 3, call `ans.Sol(3)`. To run the interactive session for Problem 3, call `ans.Ask(3)`.
+* This is all under the Go module `m9ple/euler`.
+* `main` accesses answers through the [`ans`](ans) package, through the `Sol(p int)` and `Ask(p int)` functions, where `p` is the problem number.
+* Each problem is contained in its own sub-package of [`ans`](ans), named `p<number>`.
+* ***Example:*** The full name for the package that contains the solution for Problem 3 is [`m9ple/euler/ans/p3`](ans/p3). To get the exact answer for Problem 3, call `ans.Sol(3)`. To run the interactive session for Problem 3, call `ans.Ask(3)`.
 
 ## The `euler` CLI
 
