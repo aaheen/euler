@@ -14,7 +14,7 @@ I have tried to generalize these solutions somewhat, so they can be repurposed l
 
 A utility used to run any solution, without having to travel to each solution's directory and `go run .`
 
-**I am *very* new to Go**, so I'm still trying to figure out how to implement this. I'm literally just grabbing from two big `func()` slices (declared in [problist.go](ans/problist.go)), where the index corresponds to the problem number. I have struggled trying to come up with a more elegant implementation, but right now I'm not sure what that would be.
+**I am *very* new to Go**, so I'm still trying to figure out how to implement this. I'm literally just grabbing from two big `map[int]func()` (declared in [probmap.go](ans/probmap.go)), where the index corresponds to the problem number. I have struggled trying to come up with a more elegant implementation, but right now I'm not sure what that would be.
 
 ## Usage:
 ```
