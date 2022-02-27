@@ -21,7 +21,7 @@ func Ask(p int) {
 
 // Opens problem p in my repo on Github
 func Page(p int) {
-	var gURL string = "https://github.com/m9ple/euler/tree/main/" + strconv.Itoa(p)
+	var gURL string = "https://github.com/m9ple/euler/tree/main/ans/p" + strconv.Itoa(p)
 	fmt.Println("Heading to", gURL)
 	browser.OpenURL(gURL)
 }
