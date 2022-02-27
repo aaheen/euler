@@ -28,5 +28,7 @@ func Page(p int) {
 
 // Opens my repo's main page on Github
 func Repo() {
-	browser.OpenURL("https://github.com/m9ple/euler")
+	var gURL string = "https://github.com/m9ple/euler"
+	fmt.Println("Heading to", gURL)
+	browser.OpenURL(gURL)
 }
