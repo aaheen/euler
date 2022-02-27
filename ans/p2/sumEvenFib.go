@@ -1,8 +1,9 @@
-package main
+package p2
 
 // Returns the sum of all even fibonacci numbers below a certain value
-func SumEvenFib(limit int) int {
-	var sum, n int = 0, 16
+func sumEvenFib(limit uint64) uint64 {
+	var sum uint64 = 0
+	var n int = 16
 	// Is fib(n) enough? Check and gen. more if necessary
 	for fib(n) < limit {
 		n = n << 1
@@ -18,14 +19,14 @@ func SumEvenFib(limit int) int {
 }
 
 // Returns the nth fibonacci number
-func fib(n int) int {
+func fib(n int) uint64 {
 	return fibList(n)[n-1]
 }
 
-// Returns an array of the first n fibonacci numbers.
+// Returns a slice of the first n fibonacci numbers.
 // Generated iteratively, NOT recursively
-func fibList(n int) []int {
-	var fibs = make([]int, n)
+func fibList(n int) []uint64 {
+	var fibs = make([]uint64, n)
 	for i := 0; i < n; i++ {
 		switch i {
 		case 0:
