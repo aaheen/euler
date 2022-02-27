@@ -31,9 +31,17 @@ func main() {
 	case 1: // Asking about a specific problem number
 		p, err := strconv.Atoi(fArgs[0])
 		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
+			fmt.Println("Error parsing problem ID", fArgs[0])
+			os.Exit(2)
 		}
+		// Recover if Sol, Ask, or solution code panics
+		defer func() {
+			if err := recover(); err != nil {
+				fmt.Println("Error trying to run problem", p, ":\n", err)
+				os.Exit(1)
+			}
+		}()
+
 		switch {
 		case *fInter:
 			ans.Ask(p)
