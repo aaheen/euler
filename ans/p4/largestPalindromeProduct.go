@@ -1,6 +1,7 @@
 package p4
 
 import (
+	"fmt"
 	"strconv"
 )
 
@@ -12,6 +13,8 @@ func largestPalindromeProduct(n int) (max, x, y uint64) {
 		panic("Number of digits must be at least 1")
 	case n > 9:
 		panic("Cannot compute palindrome from numbers with more than 9 digits")
+	case n > 4:
+		fmt.Println("==== WARNING: Exceedingly slow for n > 4 ====")
 	}
 	// Declare bounds and default values
 	var maxD, minD uint64 = nines(n), nines(n-1) + 1
