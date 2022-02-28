@@ -6,8 +6,8 @@ import (
 )
 
 // Returns largest palindrome product made from two n-digit numbers,
-// as well as what those two numbers actually are.
-func largestPalindromeProduct(n int) (max, x, y uint64) {
+// as well as what those two numbers actually are. p = x * y
+func largestPalindromeProduct(n int) (p, x, y uint64) {
 	switch {
 	case n < 1:
 		panic("Number of digits must be at least 1")
@@ -17,18 +17,18 @@ func largestPalindromeProduct(n int) (max, x, y uint64) {
 		fmt.Println("==== WARNING: Exceedingly slow for n > 6 ====")
 	}
 	// Declare bounds and default values
-	var maxD, minD uint64 = nines(n), nines(n-1) + 1
-	x, y = minD, minD
-	max = x * y
+	var min, max uint64 = nines(n-1) + 1, nines(n)
+	x, y = min, min
+	p = x * y
 	// Test all values
-	for i := maxD; i >= minD && i*maxD > max; i-- {
-		for j := maxD; j >= minD; j-- {
-			if isPal(i*j) && (i*j) > max {
-				max, x, y = i*j, i, j
+	for i := max; i >= min && i*max > p; i-- {
+		for j := max; j >= min; j-- {
+			if isPal(i*j) && (i*j) > p {
+				p, x, y = i*j, i, j
 			}
 		}
 	}
-	return max, x, y
+	return p, x, y
 }
 
 // Tests if n is a palidrome or not.
