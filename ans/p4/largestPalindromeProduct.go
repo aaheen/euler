@@ -13,15 +13,15 @@ func largestPalindromeProduct(n int) (max, x, y uint64) {
 		panic("Number of digits must be at least 1")
 	case n > 9:
 		panic("Cannot compute palindrome from numbers with more than 9 digits")
-	case n > 4:
-		fmt.Println("==== WARNING: Exceedingly slow for n > 4 ====")
+	case n > 6:
+		fmt.Println("==== WARNING: Exceedingly slow for n > 6 ====")
 	}
 	// Declare bounds and default values
 	var maxD, minD uint64 = nines(n), nines(n-1) + 1
 	x, y = minD, minD
 	max = x * y
 	// Test all values
-	for i := maxD; i >= minD; i-- {
+	for i := maxD; i >= minD && i*maxD > max; i-- {
 		for j := maxD; j >= minD; j-- {
 			if isPal(i*j) && (i*j) > max {
 				max, x, y = i*j, i, j
