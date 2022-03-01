@@ -10,7 +10,7 @@ func Sol() {
 // Interactive solution session for Problem 3
 func Ask() {
 	fmt.Print("Find the largest prime factor of n. \nInput n: ")
-	var n int64
+	var n uint64
 	fmt.Scanln(&n)
 	fmt.Println("Answer:", largestPrimeFactor(n))
 }

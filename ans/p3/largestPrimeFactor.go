@@ -1,17 +1,15 @@
 package p3
 
 // Returns the largest prime factor of n
-func largestPrimeFactor(n int64) int64 {
+func largestPrimeFactor(n uint64) uint64 {
 	var facs = primeFactors(n)
 	// fmt.Println(facs)
 	return facs[len(facs)-1]
 }
 
 // Returns a slice filled with all prime factors of n
-func primeFactors(n int64) []int64 {
-	var facs = make([]int64, 0)
-	var i int64 = 2
-	for ; i < n/2; i++ {
+func primeFactors(n uint64) (facs []uint64) {
+	for i := uint64(2); i < n/2; i++ {
 		if n%i == 0 {
 			if isPrime(i) {
 				facs = append(facs, i)
@@ -26,9 +24,8 @@ func primeFactors(n int64) []int64 {
 }
 
 // Returns true if n is prime, false otherwise
-func isPrime(n int64) bool {
-	var i int64 = 2
-	for ; i < n/2; i++ {
+func isPrime(n uint64) bool {
+	for i := uint64(2); i < n/2; i++ {
 		if n%i == 0 {
 			return false
 		}
