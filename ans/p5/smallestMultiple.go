@@ -2,11 +2,16 @@ package p5
 
 // Returns smallest multiple of all numbers 1:n
 func smallestMultiple(n int) (m uint64) {
+<<<<<<< HEAD
 	switch {
 	case n < 1:
 		panic("n must be at least 1")
 	case n > 177: // I only know this number because of brute force testing
 		panic("Answer Overflows uint64")
+=======
+	if n < 1 {
+		panic("n must be at least 1")
+>>>>>>> refs/remotes/origin/main
 	}
 	m = 1 // final product
 	for i := 1; i <= n; i++ {
