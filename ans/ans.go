@@ -12,8 +12,8 @@ func Sol(p int) {
 	x := 1
 	defer recAns(p, &x)
 	var fn func() = solList[p]
-	fn()
 	x = 2
+	fn()
 }
 
 // Runs interactive solution for problem p
@@ -21,8 +21,8 @@ func Ask(p int) {
 	x := 1
 	defer recAns(p, &x)
 	var fn func() = askList[p]
-	fn()
 	x = 2
+	fn()
 }
 
 // Opens problem p in my repo on Github
@@ -42,7 +42,6 @@ func Repo() {
 // Recovers if Sol or Ask fail
 func recAns(p int, x *int) {
 	if err := recover(); err != nil {
-		fmt.Println("recAns", *x)
 		switch *x {
 		case 1:
 			panic(fmt.Sprintf("Solution to problem %d has not been implemented yet", p))
