@@ -1,7 +1,9 @@
 # [Project Euler](https://projecteuler.net)
 **Solutions by Erik Heen**, *written in Go*.
 
-I have tried to generalize these solutions somewhat, so they can be repurposed later. Each directory is numbered according to the problem it solves on [Project Euler](https://projecteuler.net). Presently, I have only a few problems solved. If in the future this number grows, I will most likely fork this repository and make it private, leaving only the first 100 open for outside examination.
+[![xhub](https://img.shields.io/badge/Rendered%20with-xhub-f2eecb?style=flat-square)](https://chrome.google.com/webstore/detail/xhub/anidddebgkllnnnnjfkmjcaallemhjee)
+
+I have tried to generalize these solutions somewhat, so they can be repurposed later. Each subdirectory of [`ans`](ans) is numbered according to the problem it solves on [Project Euler](https://projecteuler.net). Presently, I have only a few problems solved. If in the future this number grows, I will most likely fork this repository and make it private, leaving only the first 100 open for outside examination.
 
 ## Structure:
 

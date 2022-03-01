@@ -1,0 +1,16 @@
+package px
+
+import "fmt"
+
+// Returns solution for Problem x
+func Sol() {
+	fmt.Println()
+}
+
+// Interactive solution session for Problem x
+func Ask() {
+	fmt.Print("Goal \nInput n: ")
+	var n int
+	fmt.Scanln(&n)
+	fmt.Println("Answer:", func(n))
+}
