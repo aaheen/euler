@@ -1,4 +1,4 @@
-# [Project Euler](https://projecteuler.net)
+# [Project Euler Solutions CLI](https://euler.heen.dev)
 [<img src="https://camo.githubusercontent.com/8826de1ec702ba066e9a0694a7af3ef54c464e560c1206f4912aa1c221f56393/68747470733a2f2f696d672e736869656c64732e696f2f6368726f6d652d7765622d73746f72652f762f63676f6c616f62676c65626a6f6e6a69626c636a61676e706d646d6c676d64613f6c6162656c3d4769744875622532304d617468253230446973706c6179" alt="Chrome Web Store version" data-canonical-src="https://img.shields.io/chrome-web-store/v/cgolaobglebjonjiblcjagnpmdmlgmda?label=GitHub%20Math%20Display" style="max-width: 100%;">](https://chrome.google.com/webstore/detail/github-math-display/cgolaobglebjonjiblcjagnpmdmlgmda "Chrome Web Store link")
 
 ![m9ple Project Euler profile badge](https://projecteuler.net/profile/m9ple.png)
@@ -18,7 +18,7 @@ I have tried to generalize these solutions somewhat, so they can be repurposed l
 
 ## The `euler` CLI
 
-A utility used to run any solution, without having to travel to each solution's directory and `go run .`
+A command line utility used to run any implemented solution and open URLs to specific problems this repo. All solutions are compiled into it, so it's portable.
 
 **I am *very* new to Go**, so I'm still trying to figure out how to implement this. I'm literally just grabbing from two big `map[int]func()` (declared in [probmap.go](ans/probmap.go)), where the index corresponds to the problem number. I have struggled trying to come up with a more elegant implementation, but right now I'm not sure what that would be.
 
