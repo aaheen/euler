@@ -13,11 +13,12 @@ func main() {
 	var usage string = `Usage: euler
 		<p> 	- Run the solution for problem <p>. Directly outputs answer
 	-i	<p> 	- Run the interactive solution session for problem <p>
-	-g 		- Open this repo on github.com/m9ple/euler
-	-g 	<p> 	- Open the subdirectory for problem <p> in this repo on github`
+	-s 	<p> 	- Open the writeup for problem <p>
+	-g 		- Open this repo on GitHub`
 
 	fInter := flag.Bool("i", false, "Run the interactive solution session for problem <p>")
-	fGithub := flag.Bool("g", false, "Open the subdirectory for problem <p> in this repo on github")
+	fWriteup := flag.Bool("s", false, "Open the writeup for problem <p>")
+	fGithub := flag.Bool("g", false, "Open this repo on GitHub")
 	flag.Parse()
 	fArgs := flag.Args()
 
@@ -45,8 +46,10 @@ func main() {
 		switch {
 		case *fInter:
 			ans.Ask(p)
+		case *fWriteup:
+			ans.Writeup(p)
 		case *fGithub:
-			ans.Page(p)
+			fmt.Println(usage)
 		default:
 			ans.Sol(p)
 		}

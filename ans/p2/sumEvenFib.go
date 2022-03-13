@@ -18,6 +18,19 @@ func sumEvenFib(limit uint64) uint64 {
 	return sum
 }
 
+// Returns the sum of all even fibonacci numbers below a certain value
+// without helper functions
+func sumEvenFib2(limit uint64) (sum uint64) {
+	sum = 0
+	var fibs = []uint64{1, 1, 2}
+	for n := 2; fibs[n] <= limit; fibs = append(fibs, fibs[n-1]+fibs[n-2]) {
+		if fibs[n]%2 == 0 {
+			sum += fibs[n]
+		}
+	}
+	return sum
+}
+
 // Returns the nth fibonacci number
 func fib(n int) uint64 {
 	return fibList(n)[n-1]
