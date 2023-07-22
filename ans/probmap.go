@@ -1,19 +1,20 @@
 package ans
 
 import (
-	"m9ple/euler/ans/p1"
-	"m9ple/euler/ans/p2"
-	"m9ple/euler/ans/p3"
-	"m9ple/euler/ans/p4"
-	"m9ple/euler/ans/p5"
-	"m9ple/euler/ans/p6"
-	"m9ple/euler/ans/p7"
-	"m9ple/euler/ans/p8"
+	"eaheen/euler/ans/p1"
+	"eaheen/euler/ans/p2"
+	"eaheen/euler/ans/p3"
+	"eaheen/euler/ans/p4"
+	"eaheen/euler/ans/p45"
+	"eaheen/euler/ans/p5"
+	"eaheen/euler/ans/p6"
+	"eaheen/euler/ans/p7"
+	"eaheen/euler/ans/p8"
 )
 
 var solList = map[int]func(){
 	1: p1.Sol, 2: p2.Sol, 3: p3.Sol, 4: p4.Sol, 5: p5.Sol,
-	6: p6.Sol, 7: p7.Sol, 8: p8.Sol,
+	6: p6.Sol, 7: p7.Sol, 8: p8.Sol, 45: p45.Sol,
 }
 
 var askList = map[int]func(){
