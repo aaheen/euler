@@ -3,21 +3,21 @@ package p45
 // Returns slice of numbers that are at the intersection of
 // the sets of all triagonal, pentagonal, and hexagonal nums.
 // Generates each set's first n entries
-func genIntx(n int) map[int]int {
+func genIntx(n uint64) map[byte]uint64 {
 
 	// generate sets
-	t := make(map[int]int)
-	p := make(map[int]int)
-	h := make(map[int]int)
-	for i := 0; i < n; i++ {
-		t[tri(i)] = i
-		p[pen(i)] = i
-		h[hex(i)] = i
+	t := make(map[uint64]byte)
+	p := make(map[uint64]byte)
+	h := make(map[uint64]byte)
+	for i :=0; uint64(i) < n; i++ {
+		t[tri(i)] = byte(0)
+		p[pen(i)] = byte(0)
+		h[hex(i)] = byte(0)
 	}
 
 	// find intersections
-	k := make(map[int]int) // k for kernel i.e. intersection
-	i := 0
+	k := make(map[byte]uint64) // k for kernel i.e. intersection
+	i := byte(0)
 	for val := range h {
 		_, isTri := t[val]
 		_, isPen := p[val]
@@ -30,14 +30,20 @@ func genIntx(n int) map[int]int {
 	return k
 }
 
-func tri(n int) int {
-	return n * (n + 1) / 2
+// Returns the nth triagonal number
+func tri(n int) uint64 {
+	un := uint64(n)
+	return un * (un + 1) / 2
 }
 
-func pen(n int) int {
-	return n * (3*n - 1) / 2
+// Returns the nth pentagonal number
+func pen(n int) uint64 {
+	un := uint64(n)
+	return un * (3*un - 1) / 2
 }
 
-func hex(n int) int {
-	return n * (2*n - 1)
+// Returns the nth hexagonal number
+func hex(n int) uint64 {
+	un := uint64(n)
+	return un * (2*un - 1)
 }

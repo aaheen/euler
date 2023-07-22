@@ -4,7 +4,7 @@ import "fmt"
 
 // Returns solution for Problem 45
 func Sol() {
-	k := genIntx(1000000)
+	k := genIntx(999999)
 	for _, val := range k {
 		fmt.Println(val)
 	}
