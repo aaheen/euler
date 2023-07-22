@@ -1,4 +1,4 @@
-module m9ple/euler
+module eaheen/euler
 
 go 1.17
 

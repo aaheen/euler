@@ -34,7 +34,7 @@ func Writeup(p int) {
 
 // Opens my repo's main page on Github
 func Repo() {
-	var gURL string = "https://github.com/m9ple/euler"
+	var gURL string = "https://github.com/eaheen/euler"
 	fmt.Println("Heading to", gURL)
 	browser.OpenURL(gURL)
 }

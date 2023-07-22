@@ -1,9 +1,9 @@
 package main
 
 import (
+	"eaheen/euler/ans"
 	"flag"
 	"fmt"
-	"m9ple/euler/ans"
 	"os"
 	"strconv"
 )
