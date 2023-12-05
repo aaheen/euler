@@ -1,7 +1,7 @@
 package main
 
 import (
-	"eaheen/euler/ans"
+	"aaheen/euler/ans"
 	"flag"
 	"fmt"
 	"os"
