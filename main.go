@@ -47,8 +47,8 @@ func main() {
 		switch {
 		case *fInter:
 			ans.Ask(p)
-		case *fWriteup:
-			ans.Writeup(p)
+		//case *fWriteup:
+		//	ans.Writeup(p)
 		case *fGithub:
 			fmt.Println(usage)
 		default:
