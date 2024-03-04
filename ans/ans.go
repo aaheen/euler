@@ -2,7 +2,6 @@ package ans
 
 import (
 	"fmt"
-	"strconv"
 
 	"github.com/pkg/browser"
 )
@@ -11,7 +10,7 @@ import (
 func Sol(p int) {
 	x := 1
 	defer recAns(p, &x)
-	var fn func() = solList[p]
+	var fn func() = solMap[p]
 	x = 2
 	fn()
 }
@@ -20,17 +19,18 @@ func Sol(p int) {
 func Ask(p int) {
 	x := 1
 	defer recAns(p, &x)
-	var fn func() = askList[p]
+	var fn func() = askMap[p]
 	x = 2
 	fn()
 }
 
 // Opens writeup for problem p on my personal blog site
-func Writeup(p int) {
-	var gURL string = "https://heen.dev/writeup/euler/" + strconv.Itoa(p)
-	fmt.Println("Heading to", gURL)
-	browser.OpenURL(gURL)
-}
+// DEPRECATED
+//func Writeup(p int) {
+//	var gURL string = "https://heen.dev/writeup/euler/" + strconv.Itoa(p)
+//	fmt.Println("Heading to", gURL)
+//	browser.OpenURL(gURL)
+//}
 
 // Opens my repo's main page on Github
 func Repo() {
