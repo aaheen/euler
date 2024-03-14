@@ -12,14 +12,14 @@ func Sol() {
 
 // Interactive solution session for Problem 9
 func Ask() {
-	fmt.Print("Goal \nInput n: ")
-	
+	fmt.Print("Find the pythagorean triple that sums to n (if it exists).\nInput n: ")
+
 	var n int
 	fmt.Scanln(&n)
 	tri := brutePythagTriN(n)
 	sum := sumTriple(tri)
 	prod := prodTriple(tri)
-	
+
 	if tri == [3]int{-1, -1, -1} {
 		fmt.Println("No triple with sum", n)
 	} else {
