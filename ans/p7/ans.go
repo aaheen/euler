@@ -1,16 +1,19 @@
 package p7
 
-import "fmt"
+import (
+	"aaheen/euler/libeuler"
+	"fmt"
+)
 
 // Returns solution for Problem 7
 func Sol() {
-	fmt.Println(prime.numPrime(10001))
+	fmt.Println(libeuler.NthPrime(10001))
 }
 
 // Interactive solution session for Problem 7
 func Ask() {
 	fmt.Print("What is the nth prime number? \nInput n: ")
-	var n int
+	var n uint64
 	fmt.Scanln(&n)
-	fmt.Println("Answer:", numPrime(n))
+	fmt.Println("Answer:", libeuler.NthPrime(n))
 }

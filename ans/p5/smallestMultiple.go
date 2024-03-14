@@ -1,21 +1,23 @@
 package p5
 
-// Returns smallest multiple of all numbers 1:n
-func smallestMultiple(n int) (m uint64) {
+import "aaheen/euler/libeuler"
+
+// Returns smallest number evenly divisible by all numbers 1:n
+func leastFullComposite(n uint64) (m uint64) {
 	switch {
 	case n < 1:
 		panic("n must be at least 1")
 	case n > 177: // I only know this number because of brute force testing
-		panic("Answer Overflows uint64")
+		panic("Answer exceeds MaxUint64")
 	}
 	m = 1 // final product
-	for i := 1; i <= n; i++ {
+	for i := uint64(1); i <= n; i++ {
 		switch {
-		case prime(i): // prime
+		case libeuler.IsPrime(i): // prime
 			m *= uint64(i)
-		case m%uint64(i) != 0: // nonprime, not a factor of m already
-			for j := 2; j <= i>>1; j++ { // multiply by prime factors of i
-				if i%j == 0 && prime(j) {
+		case m%i != 0: // nonprime, not a factor of m already
+			for j := uint64(2); j <= i>>1; j++ { // multiply by prime factors of i
+				if i%j == 0 && libeuler.IsPrime(j) {
 					m *= uint64(j)
 				}
 			}
@@ -23,14 +25,4 @@ func smallestMultiple(n int) (m uint64) {
 		// else: nonprime, already a factor of m
 	}
 	return m
-}
-
-// Returns true if n is prime, false otherwise
-func prime(n int) bool {
-	for i := 2; i <= n>>1; i++ {
-		if n%i == 0 {
-			return false
-		}
-	}
-	return true
 }

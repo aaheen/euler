@@ -1,6 +1,7 @@
 package p4
 
 import (
+	"aaheen/euler/libeuler"
 	"fmt"
 	"strconv"
 )
@@ -23,23 +24,12 @@ func largestPalindromeProduct(n int) (p, x, y uint64) {
 	// Test all values
 	for i := max; i >= min && i*max > p; i-- {
 		for j := max; j >= min; j-- {
-			if isPal(i*j) && (i*j) > p {
+			if libeuler.IsPal(i*j) && (i*j) > p {
 				p, x, y = i*j, i, j
 			}
 		}
 	}
 	return p, x, y
-}
-
-// Tests if n is a palidrome or not.
-func isPal(n uint64) bool {
-	var ns string = strconv.Itoa(int(n))
-	for i := 0; i < len(ns)>>1; i++ {
-		if ns[i] != ns[len(ns)-i-1] {
-			return false
-		}
-	}
-	return true
 }
 
 // Returns 10^d - 1
