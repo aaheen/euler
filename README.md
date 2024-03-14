@@ -1,5 +1,5 @@
-# [Project Euler Solutions CLI]
-[<img src="https://camo.githubusercontent.com/8826de1ec702ba066e9a0694a7af3ef54c464e560c1206f4912aa1c221f56393/68747470733a2f2f696d672e736869656c64732e696f2f6368726f6d652d7765622d73746f72652f762f63676f6c616f62676c65626a6f6e6a69626c636a61676e706d646d6c676d64613f6c6162656c3d4769744875622532304d617468253230446973706c6179" alt="Chrome Web Store version" data-canonical-src="https://img.shields.io/chrome-web-store/v/cgolaobglebjonjiblcjagnpmdmlgmda?label=GitHub%20Math%20Display" style="max-width: 100%;">](https://chrome.google.com/webstore/detail/github-math-display/cgolaobglebjonjiblcjagnpmdmlgmda "Chrome Web Store link")
+# Project Euler Solutions CLI
+[img src="https://camo.githubusercontent.com/8826de1ec702ba066e9a0694a7af3ef54c464e560c1206f4912aa1c221f56393/68747470733a2f2f696d672e736869656c64732e696f2f6368726f6d652d7765622d73746f72652f762f63676f6c616f62676c65626a6f6e6a69626c636a61676e706d646d6c676d64613f6c6162656c3d4769744875622532304d617468253230446973706c6179" alt="Chrome Web Store version" data-canonical-src="https://img.shields.io/chrome-web-store/v/cgolaobglebjonjiblcjagnpmdmlgmda?label=GitHub%20Math%20Display" style="max-width: 100%;">](https://chrome.google.com/webstore/detail/github-math-display/cgolaobglebjonjiblcjagnpmdmlgmda "Chrome Web Store link")
 
 ![m9ple Project Euler profile badge](https://projecteuler.net/profile/m9ple.png)
 
