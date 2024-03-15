@@ -1,5 +1,24 @@
 package p45
 
+import "fmt"
+
+// Returns solution for Problem 45
+func Sol() {
+	k := genIntx(999999)
+	for _, val := range k {
+		fmt.Println(val)
+	}
+	fmt.Println()
+}
+
+// Interactive solution session for Problem 45
+/* func Ask() {
+	fmt.Print("Goal \nInput n: ")
+	var n int
+	fmt.Scanln(&n)
+	fmt.Println("Answer:", func(n))
+} */
+
 // Returns slice of numbers that are at the intersection of
 // the sets of all triagonal, pentagonal, and hexagonal nums.
 // Generates each set's first n entries
@@ -9,7 +28,7 @@ func genIntx(n uint64) map[byte]uint64 {
 	t := make(map[uint64]byte)
 	p := make(map[uint64]byte)
 	h := make(map[uint64]byte)
-	for i :=0; uint64(i) < n; i++ {
+	for i := 0; uint64(i) < n; i++ {
 		t[tri(i)] = byte(0)
 		p[pen(i)] = byte(0)
 		h[hex(i)] = byte(0)

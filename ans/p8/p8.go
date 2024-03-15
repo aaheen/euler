@@ -1,11 +1,28 @@
 package p8
 
 import (
-	"aaheen/euler/libeuler"
+	euler "aaheen/euler/lib"
 	"fmt"
 	"os"
 	"strconv"
 )
+
+// Returns solution for Problem 8
+func Sol() {
+	fmt.Println(productInStream(13, "ans/p8/p8.num"))
+}
+
+// Interactive solution session for Problem 8
+func Ask() {
+	fmt.Println("Find the n consecutive digits within x that have the greeatest product.")
+	fmt.Print("Input n: ")
+	var n uint64
+	fmt.Scanln(&n)
+	fmt.Print("Input path to x, stored as ASCII: ")
+	var x string
+	fmt.Scanln(&x)
+	fmt.Println("Answer:", productInStream(n, x))
+}
 
 // Returns greatest product of n consecutive digits from stream x
 func productInStream(n uint64, xpath string) uint64 {
@@ -30,7 +47,7 @@ func productInStream(n uint64, xpath string) uint64 {
 		s[i] = uint64(sByte[i])
 	}
 
-	return libeuler.SliceProd(s)
+	return euler.SliceProd(s)
 }
 
 // Returns slice of n consecutive digits with greatest sum from stream s
@@ -42,7 +59,7 @@ func gSumStreamSlice(n uint64, s []byte) []byte {
 
 	var i, j, max uint64 = 0, 0, 0
 	for j+n < uint64(len(s)-1) {
-		if sum := uint64(libeuler.SliceSum(s[j : j+n])); !libeuler.HasZero(s[j:j+n]) && sum > max {
+		if sum := uint64(euler.SliceSum(s[j : j+n])); !euler.HasZero(s[j:j+n]) && sum > max {
 			i, max = j, sum
 		}
 	}

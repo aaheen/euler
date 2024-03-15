@@ -1,10 +1,26 @@
 package p4
 
 import (
-	"aaheen/euler/libeuler"
+	euler "aaheen/euler/lib"
 	"fmt"
 	"strconv"
 )
+
+// Returns solution for Problem 4
+func Sol() {
+	n, _, _ := largestPalindromeProduct(3)
+	fmt.Println(n)
+}
+
+// Interactive solution session for Problem 4
+func Ask() {
+	fmt.Print(`Find the largest palindrome made from the product of two n-digit numbers.
+Input (0 < n < 10): `)
+	var n int
+	fmt.Scanln(&n)
+	p, x, y := largestPalindromeProduct(n)
+	fmt.Println("Answer:", p, "=", x, "*", y)
+}
 
 // Returns largest palindrome product made from two n-digit numbers,
 // as well as what those two numbers actually are. p = x * y
@@ -24,7 +40,7 @@ func largestPalindromeProduct(n int) (p, x, y uint64) {
 	// Test all values
 	for i := max; i >= min && i*max > p; i-- {
 		for j := max; j >= min; j-- {
-			if libeuler.IsPal(i*j) && (i*j) > p {
+			if euler.IsPal(i*j) && (i*j) > p {
 				p, x, y = i*j, i, j
 			}
 		}

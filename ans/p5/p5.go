@@ -1,6 +1,22 @@
 package p5
 
-import "aaheen/euler/libeuler"
+import (
+	euler "aaheen/euler/lib"
+	"fmt"
+)
+
+// Returns solution for Problem 5
+func Sol() {
+	fmt.Println(leastFullComposite(20))
+}
+
+// Interactive solution session for Problem 5
+func Ask() {
+	fmt.Print("Find the smallest multiple of all numbers 1:n. \nInput n: ")
+	var n uint64
+	fmt.Scanln(&n)
+	fmt.Println("Answer:", leastFullComposite(n))
+}
 
 // Returns smallest number evenly divisible by all numbers 1:n
 func leastFullComposite(n uint64) (m uint64) {
@@ -13,11 +29,11 @@ func leastFullComposite(n uint64) (m uint64) {
 	m = 1 // final product
 	for i := uint64(1); i <= n; i++ {
 		switch {
-		case libeuler.IsPrime(i): // prime
+		case euler.IsPrime(i): // prime
 			m *= uint64(i)
 		case m%i != 0: // nonprime, not a factor of m already
 			for j := uint64(2); j <= i>>1; j++ { // multiply by prime factors of i
-				if i%j == 0 && libeuler.IsPrime(j) {
+				if i%j == 0 && euler.IsPrime(j) {
 					m *= uint64(j)
 				}
 			}

@@ -1,9 +1,12 @@
 // Basic utilities file. Sums slices, generates sequences, verifies
 // Pythagorean triples, declares some custom constants, etc.
 
-package libeuler
+package euler
 
-import "strconv"
+import (
+	"math"
+	"strconv"
+)
 
 // All number types (i.e. able to perform arithmetic)
 type number interface {
@@ -59,6 +62,11 @@ func IsPal(n uint64) bool {
 	return true
 }
 
+// Returns true if n is even. If this was C I would have used a macro.
+func IsEven(n uint64) bool {
+	return n%2 == 0
+}
+
 // Returns true if slice s has a zero value, false otherwise
 func HasZero[T number](s []T) bool {
 	for i := uint64(0); i < uint64(len(s)); i++ {
@@ -69,9 +77,13 @@ func HasZero[T number](s []T) bool {
 	return false
 }
 
-// Returns the nth fibonacci number
+// Returns the nth Fibonacci number. Uses the equation
+//
+//	Fₙ ≈ (φⁿ / √5)
+//
+// to approximate Fₙ, as Fₙ will always be the nearest whole number.
 func NthFib(n uint64) uint64 {
-	return Fibs(n)[n-1]
+	return uint64(math.Round(math.Pow(math.Phi, float64(n)/math.Sqrt(5))))
 }
 
 // Returns sum of all values in slice s.

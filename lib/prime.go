@@ -1,4 +1,4 @@
-package libeuler
+package euler
 
 import (
 	"fmt"

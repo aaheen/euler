@@ -10,7 +10,7 @@ func Sol() {
 // Interactive solution session for Problem x
 func Ask() {
 	fmt.Print("Goal \nInput n: ")
-	var n int
+	var n uint64
 	fmt.Scanln(&n)
 	fmt.Println("Answer:", func(n))
 }
